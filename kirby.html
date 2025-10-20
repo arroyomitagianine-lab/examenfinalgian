@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Kirby</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <style>
+        body {
+            background-image: url('kirbyfondo.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-color: #fefaf3;
+        }
+
+        .texto-movimiento {
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            width: 100%;
+            animation: moverTexto 12s linear infinite;
+            font-weight: bold;
+            font-family: "Courier New", monospace;
+            font-size: 2.2em;
+            color: #ff6eb4; /* rosa fuerte */
+            margin-bottom: 30px;
+        }
+
+        @keyframes moverTexto {
+            0%   { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .caja-personaje {
+            background-color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 25px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            font-family: "Times New Roman", serif;
+            color: #4b3b2b;
+        }
+
+        .caja-personaje img {
+            display: block;
+            margin: 0 auto 25px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .linea {
+            height: 3px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+
+        .linea-kirby {
+            background: linear-gradient(90deg, #ff9ed8, #ff6eb4);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #8b6d5c;
+            color: white;
+            font-weight: bold;
+            padding: 12px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #6a513f;
+        }
+
+        h1.titulo-animado {
+            text-align: center;
+            margin: 40px 0 10px;
+            font-family: "Courier New", monospace;
+            color: #ff6eb4;
+            font-size: 3em;
+            text-shadow: 1px 1px 6px #ff9ed8;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo-animado">Kirby</h1>
+
+    <div class="texto-movimiento">
+        ¡Explora las aventuras de Kirby en su mundo mágico!
+    </div>
+
+    <div class="caja-personaje">
+        <img src="kirby.png" alt="Kirby" />
+
+        <div class="linea linea-kirby"></div>
+
+        <p>
+            Kirby es una criatura rosa originaria del planeta Popstar. Debutó en <strong>“Kirby’s Dream Land”</strong> para Game Boy en 1992.
+        </p>
+
+        <div class="linea linea-kirby"></div>
+
+        <p>
+            Tiene la habilidad de aspirar enemigos, copiar sus poderes y flotar en el aire. Sus juegos destacan por su creatividad y niveles coloridos.
+        </p>
+
+        <div class="linea linea-kirby"></div>
+
+        <a href="index.html" class="btn">Volver al inicio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,395 @@
+  /* Importar fuente retro para títulos: 'Press Start 2P' */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
+
+        /*
+        * ESTILOS GLOBALES Y DE ESCRITORIO
+        */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-family: 'Press Start 2P', cursive;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Press Start 2P', cursive;
+            color: #2c2c54;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 18px;
+        }
+
+        .color-acento {
+            color: #e63946;
+            text-shadow: 1px 1px 0 #fff;
+        }
+
+        /* * BOTONES */
+        .btn-principal, .btn-secundario {
+            padding: 12px 30px;
+            border: 4px solid #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            margin: 20px 10px 10px;
+            box-shadow: 4px 4px 0 #1e1e3f;
+        }
+
+        .btn-principal {
+            background-color: #f77f00;
+            color: white;
+        }
+
+        .btn-principal:hover {
+            background-color: #e67500;
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 0 #1e1e3f;
+        }
+
+        .btn-secundario {
+            background-color: #457b9d;
+            color: white;
+            border-color: #a8dadc;
+            box-shadow: 3px 3px 0 #1d3557;
+        }
+
+        .btn-secundario:hover {
+            background-color: #3b6c8a;
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0 #1d3557;
+        }
+
+        /* * HEADER y NAVEGACIÓN */
+        header {
+            background-color: #1d3557;
+            color: white;
+            padding: 10px 0;
+            border-bottom: 5px solid #e63946;
+            position: relative;
+            z-index: 1000;
+        }
+        
+        /* Uso de flexbox para alinear logo y nav */
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; 
+        }
+
+        .logo {
+            font-size: 2em;
+            font-family: 'Press Start 2P', cursive;
+            color: #f1faee;
+        }
+
+        /* Ocultar botón de hamburguesa en escritorio */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+        
+        /* Navegación por defecto para escritorio */
+        .main-nav {
+            display: flex; 
+            gap: 15px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 700;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .main-nav a:hover {
+            background-color: #e63946;
+            color: #ffc300;
+            border-radius: 5px;
+        }
+
+        /*
+        * SECCIÓN HERO
+        */
+        #hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url('fondoprincipal.jpg'); /* Asume que la imagen está en img/ */
+            background-size: cover;
+            background-position: top center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+        }
+
+        /*
+        * CARRUSEL (Ajustes para 3 imágenes)
+        */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .carousel {
+            /* 100% * 3 imágenes = 300% */
+            display: flex;
+            width: 300%; 
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel img {
+            /* Cada imagen debe ocupar 1/3 del ancho total del .carousel (300%) */
+            width: 33.3333%; 
+            height: auto;
+        }
+
+        .carousel-wrapper {
+             /* Tiempo ajustado para 3 imágenes */
+            animation: autoSlide 12s infinite; 
+        }
+
+        .carousel-container:hover .carousel-wrapper {
+            animation-play-state: paused;
+        }
+
+        /* Keyframes corregidos para 3 imágenes: 0%, -100%, -200% */
+        @keyframes autoSlide {
+            0% { transform: translateX(0%); } 
+            33% { transform: translateX(-100%); } 
+            66% { transform: translateX(-200%); } 
+            100% { transform: translateX(0%); }
+        }
+
+        /*
+        * SECCIÓN QUIÉNES SOMOS
+        */
+        #somos-oldgames {
+            padding: 60px 0;
+            background-color: white;
+            border-bottom: 2px dashed #a8dadc;
+        }
+
+        .somos-flex {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .img-container {
+            background-image: url("kirbyfond.jpg"); /* Asume que la imagen está en la raíz */
+            background-size: cover;
+            background-position: center;
+            min-height: 350px;
+            min-width: 350px;
+            border: 5px solid #f77f00;
+            border-radius: 15px;
+            box-shadow: 8px 8px 0px #457b9d;
+        }
+
+        /*
+        * SECCIÓN PERSONAJES
+        */
+        #nuestras-historias {
+            padding: 60px 0;
+            background-color: #a8dadc;
+        }
+
+        .programas {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .carta {
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 6px 6px 0px #1d3557;
+            border: 3px solid white;
+            transition: transform 0.3s;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .carta:hover {
+            transform: translateY(-5px);
+        }
+
+        .kirby-bg { background-color: #f9dcdc; }
+        .link-bg { background-color: #d9f5d9; }
+        .pikachu-bg { background-color: #fff9d7; }
+
+        /*
+        * SECCIÓN CARACTERÍSTICAS
+        */
+        #caracteristicas {
+            padding: 60px 0;
+            background-color: #f1faee;
+        }
+
+        #caracteristicas li {
+            background-color: #ffffff;
+            padding: 18px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #1d3557;
+            border-left: 6px solid #e63946;
+            list-style: none;
+        }
+
+        /*
+        * SECCIÓN FINAL
+        */
+        #final {
+            background-color: #e63946;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #final h2 {
+            color: white;
+            font-size: 3em;
+        }
+
+        /*
+        * FOOTER
+        */
+        footer {
+            background-color: #1d3557;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+
+        /*
+        * RESPONSIVE (MÓVIL)
+        */
+        @media (max-width: 768px) {
+            
+            h1 { font-size: 2em; }
+            h2 { font-size: 2em; }
+            h3 { font-size: 1.5em; }
+
+            /* Mostrar el botón de hamburguesa en móvil */
+            .menu-toggle {
+                display: block; 
+            }
+
+            .main-nav {
+                /* Oculto por defecto en móvil */
+                display: none; 
+                flex-direction: column;
+                width: 100%;
+                background-color: #1d3557;
+                position: absolute;
+                top: 60px; /* Debajo del header */
+                left: 0;
+                z-index: 999; 
+                box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            }
+
+            /* Mostrar el menú cuando tiene la clase 'open' */
+            .main-nav.open {
+                display: flex;
+                border-top: 1px solid #457b9d; 
+            }
+
+            .main-nav a {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #457b9d; 
+            }
+            .main-nav a:last-child {
+                border-bottom: none;
+            }
+
+            /* QUIÉNES SOMOS */
+            .somos-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .img-container {
+                width: 100%;
+                min-width: auto;
+                height: 250px;
+                margin-bottom: 30px;
+            }
+
+            /* PERSONAJES */
+            .programas {
+                justify-content: center;
+            }
+            
+            .carta {
+                width: 48%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.5em; }
+            .logo { font-size: 1.5em; }
+            .carta { width: 100%; }
+        }
